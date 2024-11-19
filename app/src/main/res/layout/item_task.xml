@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    >
+
+    <!-- Task Name Input -->
+    <EditText
+        android:id="@+id/editTextTaskName"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_marginRight="10dp"
+        android:layout_height="42dp"
+        android:hint="Task Name"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_marginBottom="5dp" />
+
+    <!-- Time Taken Input -->
+    <EditText
+        android:id="@+id/editTextTimeTaken"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:layout_height="42dp"
+        android:textColor="@color/white"
+        android:hint="Time (mins)"
+        android:textColorHint="@color/white"
+        android:inputType="number"
+        android:layout_marginBottom="5dp"/>
+
+    <!-- Energy Type Spinner -->
+    <Spinner
+        android:id="@+id/spinnerEnergyType"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/buttonrectangle"
+        android:layout_height="42dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"/>
+</LinearLayout>

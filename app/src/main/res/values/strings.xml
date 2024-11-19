@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Personal Assistant</string>
+    <string-array name="energy_types">
+        <item>High Energy</item>
+        <item>Moderate Energy</item>
+        <item>Low Energy</item>
+    </string-array>
+    <string-array name ="user_types">
+        <item>Lion-Morning Type</item>
+        <item>Bear-Noon Type</item>
+        <item>Wolf-Night Type</item>
+    </string-array>
+</resources>

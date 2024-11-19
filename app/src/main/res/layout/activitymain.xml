@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+        <!-- API Key Input Field -->
+        <EditText
+            android:id="@+id/editTextApiKey"
+            android:layout_width="275dp"
+            android:layout_height="42dp"
+            android:hint="Enter API Key"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/adapterrectangle"
+            android:inputType="text" />
+
+        <!-- Save API Key Button -->
+            <Button
+                android:id="@+id/btnSaveApiKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="API"
+                android:textColor="@color/buttontextcolor"
+                android:background="@drawable/buttonrectangle"/>
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spinnerUserType"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/buttonrectangle"
+            android:entries="@array/user_types"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Task List Header -->
+
+        <!-- RecyclerView for Task List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTasks"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/adapterrectangle"/>
+
+        <Button
+            android:id="@+id/addTaskButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Add Task"
+            android:textColor="@color/buttontextcolor"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/buttonrectangle"
+            android:layout_margin="16dp"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonrectangle"
+            android:textColor="@color/buttontextcolor"
+            android:layout_gravity="center_horizontal"
+            android:text="Generate Schedule" />
+
+        <!-- Output TextView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            android:background="@drawable/adapterrectangle"/>
+    </LinearLayout>
+</ScrollView>
