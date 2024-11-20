@@ -15,7 +15,7 @@ Open for collaboration.
   - Chronotype selection.  
   - Input tasks, durations, and energy requirements (High, Moderate, Low).  
 
-[![Feature Demo](./Img2.jpeg)] 
+![Feature Demo](./Img2.jpeg) 
 
 ---
 
@@ -43,7 +43,7 @@ Open for collaboration.
 
 ### 5. Set Alarm  
 
-[![Feature Demo](./Img1.jpeg)]
+![Feature Demo](./Img1.jpeg)
 
 ---
 
