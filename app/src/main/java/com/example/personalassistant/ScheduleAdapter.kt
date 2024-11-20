@@ -12,21 +12,25 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ItemTouchHelper
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+import com.example.personalassistant.R
+
+
 
 
 data class ScheduleTask(val time: String, val task: String)
 
-class ScheduleAdapter(private val context: Context, val scheduleTasks: List<ScheduleTask>) :
+class ScheduleAdapter(private val context: Context, val scheduleTasks: MutableList<ScheduleTask>) :
     RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
 
     inner class ScheduleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textViewTime: TextView = itemView.findViewById(R.id.textViewTime)
-        val textViewTask: TextView = itemView.findViewById(R.id.textViewTask)
-        val buttonSetAlarm: Button = itemView.findViewById(R.id.buttonSetAlarm)
+        val textViewTime: TextView = itemView.findViewById(com.example.personalassistant.R.id.textViewTime)
+        val textViewTask: TextView = itemView.findViewById(com.example.personalassistant.R.id.textViewTask)
+        val buttonSetAlarm: Button = itemView.findViewById(com.example.personalassistant.R.id.buttonSetAlarm)
 
         fun bind(scheduleTask: ScheduleTask) {
             textViewTime.text = scheduleTask.time
@@ -66,6 +70,13 @@ class ScheduleAdapter(private val context: Context, val scheduleTasks: List<Sche
     }
 
     override fun getItemCount(): Int = scheduleTasks.size
+
+    fun onItemMove(fromPosition: Int, toPosition: Int): Boolean {
+        val movedTask = scheduleTasks.removeAt(fromPosition)
+        scheduleTasks.add(toPosition, movedTask)
+        notifyItemMoved(fromPosition, toPosition)
+        return true
+    }
 
     fun setAlarmForTask(context: Context, taskTime: String, taskName: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

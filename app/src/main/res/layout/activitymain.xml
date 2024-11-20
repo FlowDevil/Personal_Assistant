@@ -67,7 +67,7 @@
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="220dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@drawable/buttonrectangle"
             android:textColor="@color/buttontextcolor"
             android:layout_gravity="center_horizontal"

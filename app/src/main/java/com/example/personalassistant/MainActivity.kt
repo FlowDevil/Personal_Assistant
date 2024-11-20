@@ -15,6 +15,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.ai.client.generativeai.GenerativeModel
@@ -90,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         recyclerViewTasks.adapter = taskAdapter
         recyclerViewTasks.layoutManager = LinearLayoutManager(this)
 
-        val savedSchedule = loadScheduleFromPreferences()
+        val savedSchedule = loadScheduleFromPreferences().toMutableList()
         if (savedSchedule.isNotEmpty()) {
             val recyclerView: RecyclerView = findViewById(R.id.recyclerViewSchedule)
             val scheduleAdapter = ScheduleAdapter(this, savedSchedule)
@@ -182,7 +183,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 // Update UI with the result on the main thread
                 val scheduleText = response.text ?:" "
-                val scheduleTasks = parseScheduleText(scheduleText)
+                val scheduleTasks = parseScheduleText(scheduleText).toMutableList()
 
                 saveScheduleToPreferences(scheduleTasks)
 
